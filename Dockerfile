@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:14
+FROM node:14 AS build
 
 # Set the working directory in the container
 WORKDIR /app
@@ -17,13 +17,16 @@ COPY . .
 RUN npm run build
 
 # Use an official Nginx runtime as a parent image
-FROM nginx:alpine
+FROM nginx:1.27.3
 
 # Copy the built React app to the Nginx html directory
-COPY --from=0 /app/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Copy the Nginx configuration file
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
 
-# Start Nginx when the container launches
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
