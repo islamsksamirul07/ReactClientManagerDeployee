@@ -6,7 +6,8 @@ const base_url="https://clienttest-oxlc.onrender.com/client";
 // const base_url="http://13.49.167.242:8090";
 
 // this url for manager
-const base_url1=`https://reactclientmanagerdeployee.onrender.com/manager`;
+const base_url1=`https://spring-manager-allupdated.onrender.com/manager`;
+
 
 // export default {base_url,base_url1};
 const urls = { base_url, base_url1 };
