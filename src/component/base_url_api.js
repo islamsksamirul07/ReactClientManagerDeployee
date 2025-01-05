@@ -1,10 +1,12 @@
 import React from "react";
 
 // const base_url="http://localhost:8082/client";
-const base_url="https://clienttest-f3xv.onrender.com/client";
+// This is for client
+const base_url="https://clienttest-oxlc.onrender.com";
 // const base_url="http://13.49.167.242:8090";
 
-const base_url1=`https://clientmanagerprojectmanagertest.onrender.com/manager`;
+// this url for manager
+const base_url1=`https://spring-manager-allupdated.onrender.com`;
 
 // export default {base_url,base_url1};
 const urls = { base_url, base_url1 };
